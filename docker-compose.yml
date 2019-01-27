@@ -1,0 +1,14 @@
+version: 3
+
+services:
+  sqlserver:
+    container_name: sqlserver
+    build: ./server
+    ports:
+      - 1433:1433
+
+  seeddata
+    container_name: seeddata
+    build: ./seed
+    depends_on:
+      - sqlserver
